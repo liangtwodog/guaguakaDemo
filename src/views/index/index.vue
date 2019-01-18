@@ -33,9 +33,9 @@ export default {
         visibleArea: 30,
         touchSpotShow: true,
         touchSpotImg: 'https://i.loli.net/2019/01/17/5c3ffe3dbafa3.png',
-        touchSpotSize: '10px',
-        touchSpotImgWidth: '30px',
-        touchSpotImgHeight: '50px',
+        touchSpotSize: '8px',
+        touchSpotImgWidth: '15px',
+        touchSpotImgHeight: '25px',
         touchSpotPosition: '0.2 0.1',
         prizeImg: 'http://t2.hddhhn.com/uploads/tu/201610/198/scx30045vxd.jpg'
       },
