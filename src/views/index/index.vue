@@ -9,10 +9,10 @@
       <a style="text-align: center;margin-right: 20px;font-size: 16px" @click="changeTouchSpotImg">更换刮片</a>
       <a style="font-size: 16px;text-align: center" @click="changeImg">更换图片</a>
     </p>
-    <guaguaka-ui ref="guaguaka" :guaguakaInfo="guaguakaInfo" id="guaguakaDiv" @success="guaguakaSuccess"></guaguaka-ui>
+    <guaguaka-ui ref="guaguaka" :guaguakaConfig="guaguakaConfig" id="guaguakaDiv" @success="guaguakaSuccess"></guaguaka-ui>
     <p style="color: cornflowerblue">没刮卡的刮刮卡</p>
     <p><a style="font-size: 16px;text-align: center" @click="changeImg1">更换图片</a></p>
-    <guaguaka-ui ref="guaguaka1" :guaguakaInfo="guaguakaInfo1" id="guaguakaDiv1" @success="guaguakaSuccess"></guaguaka-ui>
+    <guaguaka-ui ref="guaguaka1" :guaguakaConfig="guaguakaConfig1" id="guaguakaDiv1" @success="guaguakaSuccess"></guaguaka-ui>
     <!--<guaguaka ref="guaguaka1" id="guaguakaDiv1"></guaguaka>-->
   </div>
 </template>
@@ -25,22 +25,26 @@ export default {
   },
   data () {
     return {
-      guaguakaInfo: {
+      guaguakaConfig: {
         id: 'guaguakaDiv',
-        width: 307.5,
-        height: 165,
+        width: '307.5px',
+        height: '165px',
         isTouch: true,
-        touchSpotSize: 20,
         visibleArea: 30,
         touchSpotShow: true,
+        touchSpotImg: 'https://i.loli.net/2019/01/17/5c3ffe3dbafa3.png',
+        touchSpotSize: '10px',
+        touchSpotImgWidth: '30px',
+        touchSpotImgHeight: '50px',
+        touchSpotPosition: '0.2 0.1',
         prizeImg: 'http://t2.hddhhn.com/uploads/tu/201610/198/scx30045vxd.jpg'
       },
-      guaguakaInfo1: {
+      guaguakaConfig1: {
         id: 'guaguakaDiv1',
-        width: 307.5,
-        height: 165,
+        width: '307.5px',
+        height: '165px',
         isTouch: true,
-        touchSpotSize: 20,
+        touchSpotShow: false,
         visibleArea: 30
       }
     }
@@ -56,7 +60,11 @@ export default {
     },
     changeTouchSpotImg () {
       this.$refs.guaguaka.setInfo({
-        touchSpotImg: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1547195400&di=05806093ea518381728dd6506565ce8b&src=http://img4q.duitang.com/uploads/item/201109/02/20110902193607_CPrxv.thumb.700_0.jpg',
+        touchSpotImg: 'https://i.loli.net/2019/01/17/5c3fef16bbd5a.png',
+        touchSpotImgWidth: '20px',
+        touchSpotImgHeight: '20px',
+        touchSpotPosition: '0.5 0.5',
+        touchSpotSize: '20px',
         isTouch: true
       })
     },
@@ -84,12 +92,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   #guaguakaDiv{
     width: 307.5px;
     margin: auto;
-    border-radius: 20px;
-    overflow: hidden;
   }
   #guaguakaDiv1{
     width: 307.5px;
